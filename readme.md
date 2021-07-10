@@ -22,8 +22,12 @@ hoặc chỉ train nlu:
 **Terminal 1+2:**
 - > cd HCCChatbot
 - > rasa run --enable-api
+
+
 localhost:5002
 - > rasa run actions
+
+
 localhost:5055
 **Terminal 3:**
 - > node NodeServer/server.js
