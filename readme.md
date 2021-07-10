@@ -18,6 +18,15 @@ hoặc chỉ train nlu:
 - > rasa run actions
 - > rasa run --enable-api
 
-
+# DEMO UI
+**Terminal 1+2:**
+- > cd HCCChatbot
+- > rasa run --enable-api
+localhost:5002
+- > rasa run actions
+localhost:5055
+**Terminal 3:**
+- > node NodeServer/server.js
+localhost:8080
 
 
