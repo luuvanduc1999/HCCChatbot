@@ -1,5 +1,5 @@
 ## Install Rasa + Các module khác
-- > pip3 install -r requirements.txt i
+- > pip3 install -r requirements.txt
 
 # HCCChatbot
 
