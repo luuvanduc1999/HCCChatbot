@@ -29,6 +29,8 @@ localhost:5002
 
 
 localhost:5055
+
+
 **Terminal 3:**
 - > node NodeServer/server.js
 localhost:8080
