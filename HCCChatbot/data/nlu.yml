@@ -1,0 +1,154 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - chào
+    - xin chào
+    - hi
+    - hello 
+    - alo
+    - eh bot
+
+
+- intent: goodbye
+  examples: |
+    - good bye
+    - bye bye
+    - tạm biệt em
+    - tạm biệt bot nhá
+    - tạm biệt
+    - bye bot
+    - hẹn gặp lại
+    - cảm ơn nhiều
+    - thanks
+    - cảm ơn
+
+- intent: ask_ability
+  examples: |
+    - bạn có thể làm những gì nhỉ
+    - bạn có chức năng gì?
+    - bạn giúp gì được mình không?
+    - bạn có thể giúp gì cho mình?
+    - bạn biết làm gì?
+    - bạn có thể hỗ trợ mình như thế nào?
+    - em biết gì
+    - biết gì
+    - bot biết gì
+    - ???
+    - có gì
+    - mày biết gì
+    - cho tao biêt
+    - cậu biết gì
+
+- intent: dky_gtvt_capmoibanglai
+  examples: |
+    - tôi muốn đăng ký cấp mới bằng lái
+    - cấp mới bằng lái xe
+    - cấp mới BLX
+    - cấp mới GPLX
+    - đăng ký cấp mới giấy phép lái xe
+
+- intent: dky_dienlucvn_sinhhoat
+  examples: |
+    - tôi muốn đăng ký cấp điện từ lưới hạ áp
+    - đăng ký cấp điện sinh hoạt 220V
+    - cấp điện từ lưới hạ áp 220V
+    - mua điẹn sinh hoạt từ lưới hạ áp 220V
+    - cấp điện mới từ lưới điện hạ áp điện sinh hoạt 220V
+
+- intent: affirm
+  examples: |
+    - bắt đầu
+    - xác nhận
+    - ngay bây giờ
+    - tiến hành
+    - ok
+    - OK
+    - Bắt đầu ngay
+    - yes
+
+- intent: deny
+  examples: |
+    - thôi
+    - bỏ
+    - bỏ qua
+    - thoát
+    - dừng
+    - không
+    - No
+
+- intent: bot_challenge
+  examples: |
+    - bạn là bot à?
+    - bạn là bot phải không?
+    - bạn là người à?
+    - bạn là người phải không?
+    - tôi đang nói chuyện với bot?
+    - tôi đang nói chuyện với người?
+
+- regex: cmtnd
+  examples: |
+    - (?<!.)[0-9]{9}(?!.)|(?<!.)[0-9]{12}(?!.)
+- intent: cmtnd
+  examples: |
+    - [091940684]{"entity": "cmtnd"}
+    - [123456789012]{"entity": "cmtnd"}
+
+- regex: phone
+  examples: |
+    - (?<!.)0[0-9]{9}(?!.)
+- intent: phone
+  examples: |
+    - [0123456789]{"entity": "phone"}
+    - [0987654321]{"entity": "phone"}
+    - [0986667621]{"entity": "phone"}    
+
+
+- regex: file_giaydenghimuadien
+  examples: |
+    - (?<!.)(giaydenghimuadien.)((doc)|(docx)|(pdf))
+- intent: file_giaydenghimuadien
+  examples: |
+    - [giaydenghimuadien.doc]{"entity": "file_giaydenghimuadien"}
+    - [giaydenghimuadien.pdf]{"entity": "file_giaydenghimuadien"}
+
+- regex: file_giaytotuythan
+  examples: |
+    - (?<!.)(giaytotuythan.)((doc)|(docx)|(pdf))
+- intent: file_giaytotuythan
+  examples: |
+    - [giaytotuythan.doc]{"entity": "file_giaytotuythan"}
+    - [giaytotuythan.pdf]{"entity": "file_giaytotuythan"}
+
+- regex: file_giaytoxacnhanchuthe
+  examples: |
+    - (?<!.)(giaytoxacnhanchuthe.)((doc)|(docx)|(pdf))
+- intent: file_giaytoxacnhanchuthe
+  examples: |
+    - [giaytoxacnhanchuthe.doc]{"entity": "file_giaytoxacnhanchuthe"}
+    - [giaytoxacnhanchuthe.pdf]{"entity": "file_giaytoxacnhanchuthe"}-
+
+- regex: file_donsathachblx
+  examples: |
+    - (?<!.)(donsathachblx.)((doc)|(docx)|(pdf))
+- intent: file_donsathachblx
+  examples: |
+    - [donsathachblx.doc]{"entity": "file_donsathachblx"}
+    - [donsathachblx.pdf]{"entity": "file_donsathachblx"}
+
+- regex: file_bansaocmndhc
+  examples: |
+    - (?<!.)(bansaocmndhc.)((doc)|(docx)|(pdf))
+- intent: file_bansaocmndhc
+  examples: |
+    - [bansaocmndhc.doc]{"entity": "file_bansaocmndhc"}
+    - [bansaocmndhc.pdf]{"entity": "file_bansaocmndhc"}    
+
+- regex: file_giaykhamsuckhoe
+  examples: |
+    - (?<!.)(giaykhamsuckhoe.)((doc)|(docx)|(pdf))
+- intent: file_giaykhamsuckhoe
+  examples: |
+    - [giaykhamsuckhoe.doc]{"entity": "file_giaykhamsuckhoe"}
+    - [giaykhamsuckhoe.pdf]{"entity": "file_giaykhamsuckhoe"}      

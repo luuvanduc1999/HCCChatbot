@@ -1,0 +1,771 @@
+version: "2.0"
+nlu:
+- lookup: full_name
+  examples: |
+    - Nguyễn Thị Như Quỳnh
+    - Lê Hoàng Quân
+    - Đinh Văn Phượng
+    - Nguyễn Xuân Sang
+    - Lê Phú Quý
+    - Lý Quốc Quyền
+    - Bùi Minh Quân
+    - Nguyễn Ngọc Sơn
+    - Bùi Duy Qúy
+    - Võ Hoàng Phương
+    - Trần Minh Phương
+    - Phan Duy Quốc
+    - Nguyễn Vũ Ngọc Quyên
+    - Trương Trọng Quân
+    - Phạm Minh Quân
+    - Võ Thanh Sanh
+    - Nguyễn Minh Phương
+    - Nguyễn Viết Sơn
+    - Vũ Hoàng Hải Sơn
+    - Nguyễn Hải Sơn
+    - Nguyễn Vũ Trường Sơn
+    - Trần Minh Sang
+    - Nguyễn Trung Sơn
+    - Lê Quang
+    - Vũ Thị Phương
+    - Nguyễn Văn Sơn
+    - Lê Anh Sơn
+    - Võ Tiến Sĩ
+    - Phan Đức Sơn
+    - Trần Thế Sơn
+    - Vũ Hồng Tâm
+    - Nguyễn Minh Tân
+    - Lê Hà Xuân Thái
+    - Nguyễn Ngọc Phương
+    - Bùi Anh Tài
+    - Dương Chí Tâm
+    - Phạm Thanh Quốc
+    - Lê Trường Sa
+    - Lưu Nguyễn Quốc Sơn
+    - Ngô Vũ Sang
+    - Lê Công Tài
+    - Đỗ Minh Tâm
+    - Trần Thị Minh Sương
+    - Trần Văn Tài
+    - Lê Văn Tài
+    - Vũ Thị Hoài Sơn
+    - Dương Thanh Tâm
+    - Hồ Quốc Tài
+    - Huỳnh Lê Tấn Tài
+    - Huỳnh Hữu Tâm
+    - Nguyễn Anh Tấn
+    - Nguyễn Ngọc Thân
+    - Đoàn Thanh Tân
+    - Vũ Minh Thái
+    - Đặng Xuân Thanh
+    - Vũ Văn Thành
+    - Lê Duy Thắng
+    - Hồ Nguyễn Xuân Thanh
+    - Trần Tất Thắng
+    - Nguyễn Chí Thanh
+    - Phan Xuân Thắng
+    - Bùi Minh Thảo
+    - Đặng Văn Thắng
+    - Diệp Vương Thắng
+    - Đinh Xuân Thắng
+    - Lâm Văn Thành
+    - Nguyễn Tiến Thành
+    - Đàm Văn Thiện
+    - Nguyễn Văn Thanh
+    - Võ Đức Thảo
+    - Bùi Trung Thành
+    - Lê Tấn Thạnh
+    - Lê Tiến Thành
+    - Nguyễn Đình Thi
+    - Nguyễn Công Thành
+    - Lương Văn Thao
+    - Cao Bá Thành
+    - Nguyễn Hữu Thế
+    - Đào Văn Thiện
+    - Nguyễn Văn Thịnh
+    - Nguyễn Đức Thông
+    - Nguyễn Lê Trường Thọ
+    - Trần Minh Thông
+    - Phạm Quang Thông
+    - Trịnh Đức Thiện
+    - Hồ Quang Thịnh
+    - Trần Quang Văn Thư
+- intent: full_name
+  examples: |
+    - [Nguyễn Đức Minh]{"entity": "full_name"}
+
+- regex: phone
+  examples: |
+    - (?<!.)0[0-9]{9}(?!.)
+- intent: phone
+  examples: |
+    - [0123456789]{"entity": "phone"}
+    - [0987654321]{"entity": "phone"}
+    - [0986667621]{"entity": "phone"}
+- regex: cmtnd
+  examples: |
+    - (?<!.)[0-9]{9}(?!.)|(?<!.)[0-9]{12}(?!.)
+- intent: cmtnd
+  examples: |
+    - [091940684]{"entity": "cmtnd"}
+    - [123456789012]{"entity": "cmtnd"}
+- lookup: district
+  examples: |
+    - Ba Đình
+    - Bắc Từ Liêm
+    - Cầu Giấy
+    - Đống Đa
+    - Hà Đông
+    - Hai Bà Trưng
+    - Hoàn Kiếm
+    - Hoàng Mai
+    - Long Biên
+    - Nam Từ Liêm
+    - Tây Hồ
+    - Thanh Xuân
+    - Sơn Tây
+    - Ba Vì
+    - Chương Mỹ
+    - Đan Phượng
+    - Đông Anh
+    - Gia Lâm
+    - Hoài Đức
+    - Mê Linh
+    - Mỹ Đức
+    - Phú Xuyên
+    - Phúc Thọ
+    - Quốc Oai
+    - Sóc Sơn
+    - Thạch Thất
+    - Thanh Oai
+    - Thanh Trì
+    - Thường Tín
+    - Ứng Hòa
+- intent: district
+  examples: |
+    - [Hai Bà Trưng]{"entity": "district"}
+    - quận [Cầu giấy]{"entity": "district"}
+
+- lookup: sub_district
+  examples: |
+    - Phúc Xá
+    - Trúc Bạch
+    - Vĩnh Phúc
+    - Cống Vị
+    - Liễu Giai
+    - Nguyễn Trung Trực
+    - Quán Thánh
+    - Ngọc Hà
+    - Điện Biên
+    - Đội Cấn
+    - Ngọc Khánh
+    - Kim Mã
+    - Giảng Võ
+    - Thành Công
+    - Phúc Tân
+    - Đồng Xuân
+    - Hàng Mã
+    - Hàng Buồm
+    - Hàng Đào
+    - Hàng Bồ
+    - Cửa Đông
+    - Lý Thái Tổ
+    - Hàng Bạc
+    - Hàng Gai
+    - Chương Dương
+    - Hàng Trống
+    - Cửa Nam
+    - Hàng Bông
+    - Tràng Tiền
+    - Trần Hưng Đạo
+    - Phan Chu Trinh
+    - Hàng Bài
+    - Phú Thượng
+    - Nhật Tân
+    - Tứ Liên
+    - Quảng An
+    - Xuân La
+    - Yên Phụ
+    - Bưởi
+    - Thụy Khuê
+    - Thượng Thanh
+    - Ngọc Thụy
+    - Giang Biên
+    - Đức Giang
+    - Việt Hưng
+    - Gia Thụy
+    - Ngọc Lâm
+    - Phúc Lợi
+    - Bồ Đề
+    - Sài Đồng
+    - Long Biên
+    - Thạch Bàn
+    - Phúc Đồng
+    - Cự Khối
+    - Nghĩa Đô
+    - Nghĩa Tân
+    - Mai Dịch
+    - Dịch Vọng
+    - Dịch Vọng Hậu
+    - Quan Hoa
+    - Yên Hoà
+    - Trung Hoà
+    - Cát Linh
+    - Văn Miếu
+    - Quốc Tử Giám
+    - Láng Thượng
+    - Ô Chợ Dừa
+    - Văn Chương
+    - Hàng Bột
+    - Láng Hạ
+    - Khâm Thiên
+    - Thổ Quan
+    - Nam Đồng
+    - Trung Phụng
+    - Quang Trung
+    - Trung Liệt
+    - Phương Liên
+    - Thịnh Quang
+    - Trung Tự
+    - Kim Liên
+    - Phương Mai
+    - Ngã Tư Sở
+    - Khương Thượng
+    - Nguyễn Du
+    - Bạch Đằng
+    - Phạm Đình Hổ
+    - Lê Đại Hành
+    - Đồng Nhân
+    - Phố Huế
+    - Đống Mác
+    - Thanh Lương
+    - Thanh Nhàn
+    - Cầu Dền
+    - Bách Khoa
+    - Đồng Tâm
+    - Vĩnh Tuy
+    - Bạch Mai
+    - Quỳnh Mai
+    - Quỳnh Lôi
+    - Minh Khai
+    - Trương Định
+    - Thanh Trì
+    - Vĩnh Hưng
+    - Định Công
+    - Mai Động
+    - Tương Mai
+    - Đại Kim
+    - Tân Mai
+    - Hoàng Văn Thụ
+    - Giáp Bát
+    - Lĩnh Nam
+    - Thịnh Liệt
+    - Trần Phú
+    - Hoàng Liệt
+    - Yên Sở
+    - Nhân Chính
+    - Thượng Đình
+    - Khương Trung
+    - Khương Mai
+    - Thanh Xuân Trung
+    - Phương Liệt
+    - Hạ Đình
+    - Khương Đình
+    - Thanh Xuân Bắc
+    - Thanh Xuân Nam
+    - Kim Giang
+    - Sóc Sơn
+    - Bắc Sơn
+    - Minh Trí
+    - Hồng Kỳ
+    - Nam Sơn
+    - Trung Giã
+    - Tân Hưng
+    - Minh Phú
+    - Phù Linh
+    - Bắc Phú
+    - Tân Minh
+    - Quang Tiến
+    - Hiền Ninh
+    - Tân Dân
+    - Tiên Dược
+    - Việt Long
+    - Xuân Giang
+    - Mai Đình
+    - Đức Hoà
+    - Thanh Xuân
+    - Đông Xuân
+    - Kim Lũ
+    - Phú Cường
+    - Phú Minh
+    - Phù Lỗ
+    - Xuân Thu
+    - Đông Anh
+    - Xuân Nộn
+    - Thuỵ Lâm
+    - Bắc Hồng
+    - Nguyên Khê
+    - Nam Hồng
+    - Tiên Dương
+    - Vân Hà
+    - Uy Nỗ
+    - Vân Nội
+    - Liên Hà
+    - Việt Hùng
+    - Kim Nỗ
+    - Kim Chung
+    - Dục Tú
+    - Đại Mạch
+    - Vĩnh Ngọc
+    - Cổ Loa
+    - Hải Bối
+    - Xuân Canh
+    - Võng La
+    - Tàm Xá
+    - Mai Lâm
+    - Đông Hội
+    - Yên Viên
+    - Yên Thường
+    - Yên Viên
+    - Ninh Hiệp
+    - Đình Xuyên
+    - Dương Hà
+    - Phù Đổng
+    - Trung Mầu
+    - Lệ Chi
+    - Cổ Bi
+    - Đặng Xá
+    - Phú Thị
+    - Kim Sơn
+    - Trâu Quỳ
+    - Dương Quang
+    - Dương Xá
+    - Đông Dư
+    - Đa Tốn
+    - Kiêu Kỵ
+    - Bát Tràng
+    - Kim Lan
+    - Văn Đức
+    - Cầu Diễn
+    - Xuân Phương
+    - Phương Canh
+    - Mỹ Đình 1
+    - Mỹ Đình 2
+    - Tây Mỗ
+    - Mễ Trì
+    - Phú Đô
+    - Đại Mỗ
+    - Trung Văn
+    - Văn Điển
+    - Tân Triều
+    - Thanh Liệt
+    - Tả Thanh Oai
+    - Hữu Hoà
+    - Tam Hiệp
+    - Tứ Hiệp
+    - Yên Mỹ
+    - Vĩnh Quỳnh
+    - Ngũ Hiệp
+    - Duyên Hà
+    - Ngọc Hồi
+    - Vạn Phúc
+    - Đại áng
+    - Liên Ninh
+    - Đông Mỹ
+    - Thượng Cát
+    - Liên Mạc
+    - Đông Ngạc
+    - Đức Thắng
+    - Thụy Phương
+    - Tây Tựu
+    - Xuân Đỉnh
+    - Xuân Tảo
+    - Minh Khai
+    - Cổ Nhuế 1
+    - Cổ Nhuế 2
+    - Phú Diễn
+    - Phúc Diễn
+    - Chi Đông
+    - Đại Thịnh
+    - Kim Hoa
+    - Thạch Đà
+    - Tiến Thắng
+    - Tự Lập
+    - Quang Minh
+    - Thanh Lâm
+    - Tam Đồng
+    - Liên Mạc
+    - Vạn Yên
+    - Chu Phan
+    - Tiến Thịnh
+    - Mê Linh
+    - Văn Khê
+    - Hoàng Kim
+    - Tiền Phong
+    - Tráng Việt
+    - Nguyễn Trãi
+    - Mộ Lao
+    - Văn Quán
+    - Vạn Phúc
+    - Yết Kiêu
+    - Quang Trung
+    - La Khê
+    - Phú La
+    - Phúc La
+    - Hà Cầu
+    - Yên Nghĩa
+    - Kiến Hưng
+    - Phú Lãm
+    - Phú Lương
+    - Dương Nội
+    - Đồng Mai
+    - Biên Giang
+    - Lê Lợi
+    - Phú Thịnh
+    - Ngô Quyền
+    - Quang Trung
+    - Sơn Lộc
+    - Xuân Khanh
+    - Đường Lâm
+    - Viên Sơn
+    - Xuân Sơn
+    - Trung Hưng
+    - Thanh Mỹ
+    - Trung Sơn Trầm
+    - Kim Sơn
+    - Sơn Đông
+    - Cổ Đông
+    - Tây Đằng
+    - Phú Cường
+    - Cổ Đô
+    - Tản Hồng
+    - Vạn Thắng
+    - Châu Sơn
+    - Phong Vân
+    - Phú Đông
+    - Phú Phương
+    - Phú Châu
+    - Thái Hòa
+    - Đồng Thái
+    - Phú Sơn
+    - Minh Châu
+    - Vật Lại
+    - Chu Minh
+    - Tòng Bạt
+    - Cẩm Lĩnh
+    - Sơn Đà
+    - Đông Quang
+    - Tiên Phong
+    - Thụy An
+    - Cam Thượng
+    - Thuần Mỹ
+    - Tản Lĩnh
+    - Ba Trại
+    - Minh Quang
+    - Ba Vì
+    - Vân Hòa
+    - Yên Bài
+    - Khánh Thượng
+    - Phúc Thọ
+    - Vân Hà
+    - Vân Phúc
+    - Vân Nam
+    - Xuân Đình
+    - Sen Phương
+    - Võng Xuyên
+    - Thọ Lộc
+    - Long Xuyên
+    - Thượng Cốc
+    - Hát Môn
+    - Tích Giang
+    - Thanh Đa
+    - Trạch Mỹ Lộc
+    - Phúc Hòa
+    - Ngọc Tảo
+    - Phụng Thượng
+    - Tam Thuấn
+    - Tam Hiệp
+    - Hiệp Thuận
+    - Liên Hiệp
+    - Phùng
+    - Trung Châu
+    - Thọ An
+    - Thọ Xuân
+    - Hồng Hà
+    - Liên Hồng
+    - Liên Hà
+    - Hạ Mỗ
+    - Liên Trung
+    - Phương Đình
+    - Thượng Mỗ
+    - Tân Hội
+    - Tân Lập
+    - Đan Phượng
+    - Đồng Tháp
+    - Song Phượng
+    - Trạm Trôi
+    - Đức Thượng
+    - Minh Khai
+    - Dương Liễu
+    - Di Trạch
+    - Đức Giang
+    - Cát Quế
+    - Kim Chung
+    - Yên Sở
+    - Sơn Đồng
+    - Vân Canh
+    - Đắc Sở
+    - Lại Yên
+    - Tiền Yên
+    - Song Phương
+    - An Khánh
+    - An Thượng
+    - Vân Côn
+    - La Phù
+    - Đông La
+    - Đông Xuân
+    - Quốc Oai
+    - Sài Sơn
+    - Phượng Cách
+    - Yên Sơn
+    - Ngọc Liệp
+    - Ngọc Mỹ
+    - Liệp Tuyết
+    - Thạch Thán
+    - Đồng Quang
+    - Phú Cát
+    - Tuyết Nghĩa
+    - Nghĩa Hương
+    - Cộng Hòa
+    - Tân Phú
+    - Đại Thành
+    - Phú Mãn
+    - Cấn Hữu
+    - Tân Hòa
+    - Hòa Thạch
+    - Đông Yên
+    - Yên Trung
+    - Yên Bình
+    - Tiến Xuân
+    - Liên Quan
+    - Đại Đồng
+    - Cẩm Yên
+    - Lại Thượng
+    - Phú Kim
+    - Hương Ngải
+    - Canh Nậu
+    - Kim Quan
+    - Dị Nậu
+    - Bình Yên
+    - Chàng Sơn
+    - Thạch Hoà
+    - Cần Kiệm
+    - Hữu Bằng
+    - Phùng Xá
+    - Tân Xã
+    - Thạch Xá
+    - Bình Phú
+    - Hạ Bằng
+    - Đồng Trúc
+    - Chúc Sơn
+    - Xuân Mai
+    - Phụng Châu
+    - Tiên Phương
+    - Đông Sơn
+    - Đông Phương Yên
+    - Phú Nghĩa
+    - Trường Yên
+    - Ngọc Hòa
+    - Thủy Xuân Tiên
+    - Thanh Bình
+    - Trung Hòa
+    - Đại Yên
+    - Thụy Hương
+    - Tốt Động
+    - Lam Điền
+    - Tân Tiến
+    - Nam Phương Tiến
+    - Hợp Đồng
+    - Hoàng Văn Thụ
+    - Hoàng Diệu
+    - Hữu Văn
+    - Quảng Bị
+    - Mỹ Lương
+    - Thượng Vực
+    - Hồng Phong
+    - Đồng Phú
+    - Trần Phú
+    - Văn Võ
+    - Đồng Lạc
+    - Hòa Chính
+    - Phú Nam An
+    - Kim Bài
+    - Cự Khê
+    - Bích Hòa
+    - Mỹ Hưng
+    - Cao Viên
+    - Bình Minh
+    - Tam Hưng
+    - Thanh Cao
+    - Thanh Thùy
+    - Thanh Mai
+    - Thanh Văn
+    - Đỗ Động
+    - Kim An
+    - Kim Thư
+    - Phương Trung
+    - Tân Ước
+    - Dân Hòa
+    - Liên Châu
+    - Cao Dương
+    - Xuân Dương
+    - Hồng Dương
+    - Thường Tín
+    - Ninh Sở
+    - Nhị Khê
+    - Duyên Thái
+    - Khánh Hà
+    - Hòa Bình
+    - Văn Bình
+    - Hiền Giang
+    - Hồng Vân
+    - Vân Tảo
+    - Liên Phương
+    - Văn Phú
+    - Tự Nhiên
+    - Tiền Phong
+    - Hà Hồi
+    - Thư Phú
+    - Nguyễn Trãi
+    - Quất Động
+    - Chương Dương
+    - Tân Minh
+    - Lê Lợi
+    - Thắng Lợi
+    - Dũng Tiến
+    - Thống Nhất
+    - Nghiêm Xuyên
+    - Tô Hiệu
+    - Văn Tự
+    - Vạn Điểm
+    - Minh Cường
+    - Phú Minh
+    - Phú Xuyên
+    - Hồng Minh
+    - Phượng Dực
+    - Nam Tiến
+    - Tri Trung
+    - Đại Thắng
+    - Phú Túc
+    - Văn Hoàng
+    - Hồng Thái
+    - Hoàng Long
+    - Quang Trung
+    - Nam Phong
+    - Nam Triều
+    - Tân Dân
+    - Sơn Hà
+    - Chuyên Mỹ
+    - Khai Thái
+    - Phúc Tiến
+    - Vân Từ
+    - Tri Thủy
+    - Đại Xuyên
+    - Phú Yên
+    - Bạch Hạ
+    - Quang Lãng
+    - Châu Can
+    - Minh Tân
+    - Vân Đình
+    - Viên An
+    - Viên Nội
+    - Hoa Sơn
+    - Quảng Phú Cầu
+    - Trường Thịnh
+    - Cao Thành
+    - Liên Bạt
+    - Sơn Công
+    - Đồng Tiến
+    - Phương Tú
+    - Trung Tú
+    - Đồng Tân
+    - Tảo Dương Văn
+    - Vạn Thái
+    - Minh Đức
+    - Hòa Lâm
+    - Hòa Xá
+    - Trầm Lộng
+    - Kim Đường
+    - Hòa Nam
+    - Hòa Phú
+    - Đội Bình
+    - Đại Hùng
+    - Đông Lỗ
+    - Phù Lưu
+    - Đại Cường
+    - Lưu Hoàng
+    - Hồng Quang
+    - Đại Nghĩa
+    - Đồng Tâm
+    - Thượng Lâm
+    - Tuy Lai
+    - Phúc Lâm
+    - Mỹ Thành
+    - Bột Xuyên
+    - An Mỹ
+    - Hồng Sơn
+    - Lê Thanh
+    - Xuy Xá
+    - Phùng Xá
+    - Phù Lưu Tế
+    - Đại Hưng
+    - Vạn Kim
+    - Đốc Tín
+    - Hương Sơn
+    - Hùng Tiến
+    - An Tiến
+    - Hợp Tiến
+    - Hợp Thanh
+    - An Phú
+- intent: sub_district
+  examples: |
+    - [Trương Định]{"entity": "sub_district"}
+    - phường [Bạch Mai]{"entity": "sub_district"}
+    - xã [Bắc Sơn]{"entity": "sub_district"}
+    - thị trấn [Sóc Sơn]{"entity": "sub_district"}
+- intent: location
+  examples: |
+    - [100 Xuân Diệu]{"entity": "location"}
+    - [27 Đ. Cổ Linh]{"entity": "location"}
+    - [Khu tập thể Giảng Võ]{"entity": "location"}
+    - [Ngõ 106 - Hoàng Quốc Việt]{"entity": "location"}
+    - [Khu đô thị Times City]{"entity": "location"}
+    - [116 H2 Thành Công]{"entity": "location"}
+    - [466 Trần Hưng Đạo]{"entity": "location"}
+    - [21 Tràng Tiền]{"entity": "location"}
+    - [Khu đô thị Ciputra]{"entity": "location"}
+    - [Tập thể F361 An Dương]{"entity": "location"}
+    - [Phố Khúc Thừa Dụ]{"entity": "location"}
+    - [Ngách 33/22 Thụy Phương]{"entity": "location"}
+    - [506 đường Bạch Mai]{"entity": "location"}
+    - [số 1, Đại Cồ Việt]{"entity": "location"}
+- intent: phase
+  examples: |
+    - [1 pha]{"entity": "phase"}
+    - [3 pha]{"entity": "phase"}
+    - [một pha]{"entity": "phase"}
+    - [ba pha]{"entity": "phase"}
+
+- regex: file_giaytoxacnhanchuthe
+  examples: |
+    - ^[A-Za-z0-9-_,\s]+[.]((doc)|(docx)|(pdf))(?!.)
+- intent: file_giaytoxacnhanchuthe
+  examples: |
+    - [tai lie 1.doc]{"entity": "file_giaytoxacnhanchuthe"}
+    - [tai_lieu.pdf]]{"entity": "file_giaytoxacnhanchuthe"}
+
+
+
+  
+
+
+

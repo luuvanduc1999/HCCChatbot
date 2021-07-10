@@ -1,0 +1,249 @@
+version: '2.0'
+config:
+  store_entities_as_slots: false
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- ask_ability:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- dky_dienlucvn_sinhhoat:
+    use_entities: true
+- dky_gtvt_capmoibanglai:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- file_giaydenghimuadien:
+    use_entities: true
+- file_giaytoxacnhanchuthe:
+    use_entities: true
+- file_giaytotuythan:
+    use_entities: true
+- cmtnd:
+    use_entities: true
+- phone:
+    use_entities: true
+- file_giaykhamsuckhoe:
+    use_entities: true
+- file_donsathachblx:
+    use_entities: true
+- file_bansaocmndhc:
+    use_entities: true
+entities:
+- cmtnd
+- phone
+- file_giaydenghimuadien
+- file_giaytoxacnhanchuthe
+- file_giaytotuythan
+- file_donsathachblx
+- file_bansaocmndhc
+- file_giaykhamsuckhoe
+slots:
+  phone:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  cmtnd:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  file_giaydenghimuadien:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  file_giaytoxacnhanchuthe:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  file_giaytotuythan:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  file_donsathachblx:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  file_bansaocmndhc:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  file_giaykhamsuckhoe:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: false
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Chào bạn. Đây là chatbot giúp hỗ trợ các thủ tục hành chính công Hà Nội trực tuyến. Bạn cần hỗ trợ gì
+  utter_goodbye:
+  - text: Hẹn gặp lại bạn lần sau!!
+  utter_show_ability:
+  - text: |-
+      Hiện tôi có thể hỗ trợ các thủ tục hành chính công sau:
+      - Cấp mới Giấy phép lái xe
+      - Cấp điện mới từ lưới điện hạ áp
+  utter_iamabot:
+  - text: Tôi là chatbot được phát triển bởi Cổng Dịch vụ công Hà Nội.
+  utter_internal_error:
+  - text: Xin lỗi!. Hệ thống đang gặp sự cố ngoài ý muốn. Xin vui lòng thực hiện lại sau.
+  utter_dienlucvn_sinhhoat:
+  - text: |-
+      [Dịch vụ:] Cấp điện mới từ lưới điện hạ áp (điện sinh hoạt 220V)
+      [Cơ quan:] Tập đoàn Điện lực Việt Nam
+      [Hồ sơ gồm:] 
+      - Giấy đề nghị mua điện: https://csdl.dichvucong.gov.vn/web/jsp/download_file.jsp?ma=3feb864dfdb7c754 
+      - Giấy tờ tùy thân của cá nhân hoặc người đại diện hợp pháp của tổ chức; là một trong những loại giấy tờ sau: Giấy chứng minh nhân dân; Giấy chứng minh công an nhân dân; Giấy chứng minh sỹ quan quân đội nhân dân; Thẻ căn cước công dân; Hộ chiếu hoặc Giấy xác nhận nhân thân của công an phường, xã (có ảnh đóng dấu giáp lai).
+      - Giấy tờ xác định chủ thể HĐMBĐ là một trong các loại giấy tờ có tên của Tổ chức/cá nhân tại địa điểm mua điện sau: Hộ khẩu thường trú; Sổ tạm trú; Giấy chứng nhận quyền sở hữu nhà; Quyết định phân nhà; Hợp đồng mua bán nhà; Hợp đồng thuê nhà có thời hạn từ 01 năm trở lên và đồng ý của chủ sở hữu; Giấy chứng nhận quyền sử dụng đất; Hợp đồng ủy quyền quản lý và sử dụng nhà/đất; Hợp đồng thuê địa điểm và đồng ý của chủ sở hữu; Giấy chứng nhận đăng ký doanh nghiệp; Giấy chứng nhận đăng ký kinh doanh; Giấy chứng nhận đăng ký hộ kinh doanh; Giấy chứng nhận đăng ký hoạt động chi nhánh, văn phòng đại diện; Giấy phép đầu tư; Quyết định thành lập đơn vị.
+      [Quy trình giải quyết:]
+      - Tiếp nhận yêu cầu
+      - Khảo sát
+      - Lắp đặt nghiệm thu thiết bị đo đếm, ký HĐMBĐ
+  utter_gtvt_capmoibanglai:
+  - text: |-
+      [Dịch vụ:] Cấp mới Giấy phép lái xe
+      [Cơ quan:] Sở Giao thông vận tải
+      [Đối tượng:] Người học lái xe lần đầu; học lái xe nâng hạng; người đồng bào dân tộc thiểu số không biết đọc, viết tiếng Việt học lái xe mô tô hạng A1, hạng A4 nộp hồ sơ tại cơ sở đào tạo lái xe;
+      [Điều kiện:] 
+      - Là công dân Việt Nam, người nước ngoài được phép cư trú hoặc đang làm việc, học tập tại Việt Nam.
+      - Đủ tuổi (tính đến ngày dự sát hạch lái xe), sức khoẻ, trình độ văn hóa theo quy định; đối với người học để nâng hạng giấy phép lái xe, có thể học trước nhưng chỉ được dự sát hạch khi đủ tuổi theo quy định.
+      [Hồ sơ gồm:] 
+      - Hồ sơ do người học lái xe nộp:
+      + Đơn đề nghị học, sát hạch để cấp giấy phép lái xe theo mẫu quy định: https://csdl.dichvucong.gov.vn/web/jsp/download_file.jsp?ma=3fe1af182376a8ca
+      + Bản sao giấy chứng minh nhân dân hoặc thẻ căn cước công dân hoặc hộ chiếu còn thời hạn có ghi số giấy chứng minh nhân dân hoặc thẻ căn cước công dân đối với người Việt Nam; hộ chiếu còn thời hạn đối với người Việt Nam định cư ở nước ngoài;
+      + Bản sao hộ chiếu còn thời hạn trên 06 tháng và thẻ tạm trú hoặc thẻ thường trú hoặc chứng minh thư ngoại giao hoặc chứng minh thư công vụ đối với người nước ngoài;
+      + Giấy khám sức khỏe của người lái xe do cơ sở y tế có thẩm quyền cấp theo quy định.
+      - Hồ sơ do cơ sở đào tạo lái xe nộp:
+      + Hồ sơ của người học lái xe;
+      + Chứng chỉ sơ cấp hoặc chứng chỉ đào tạo đối với người dự sát hạch lái xe hạng A4, B1, B2 và C;
+      + Danh sách đề nghị sát hạch của cơ sở đào tạo lái xe có tên của người dự sát hạch.
+      [Quy trình giải quyết:]
+      - Căn cứ quyết định công nhận trúng tuyển kỳ sát hạch, Tổng cục trưởng Tổng cục Đường bộ Việt Nam, Giám đốc Sở Giao thông vận tải cấp giấy phép lái xe cho người trúng tuyển.
+      Ngày trúng tuyển ghi tại mặt sau giấy phép lái xe là ngày ký quyết định công nhận trúng tuyển kỳ sát hạch.
+      - Người đạt kết quả kỳ sát hạch được cấp giấy phép lái xe đúng hạng đã trúng tuyển; đối với trường hợp nâng hạng phải xuất trình bản chính giấy phép lái xe khi đến nhận giấy phép lái xe.
+      - Thời gian cấp giấy phép lái xe chậm nhất không quá 10 ngày làm việc, kể từ ngày kết thúc kỳ sát hạch.
+      - Cá nhân đạt kết quả sát hạch có nhu cầu nhận giấy phép lái xe tại nhà, trong vòng 03 ngày kể từ ngày kết thúc kỳ sát hạch, thực hiện đăng ký qua hệ thống dịch vụ công trực tuyến đến Tổng cục Đường bộ Việt Nam hoặc Sở Giao thông vận tải."
+  utter_ask_affirm:
+  - text: |-
+      Bạn có muốn đăng ký trực tuyến dịch vụ công này ngay bây giờ
+       Để bắt đầu, chat [Bắt đầu]
+       Để kết thúc, chat [Thôi]
+  utter_start:
+  - text: '[Khởi tạo yêu cầu...]'
+  utter_end:
+  - text: Kết thúc yêu cầu
+  utter_ask_full_name:
+  - text: 'Họ tên đầy đủ: (viết hoa)'
+  utter_ask_phone:
+  - text: 'Số điện thoại(10 số):'
+  utter_ask_cmtnd:
+  - text: 'CMTND(9 số)/CCCD(12 số):'
+  utter_ask_district:
+  - text: 'Quận/Huyện (VD:Hai Bà Trưng):'
+  utter_ask_sub_district:
+  - text: 'Phường/Xã/TT (VD:Trương Định):'
+  utter_ask_location:
+  - text: 'Địa chỉ cụ thể (số nhà, block, đuờng): '
+  utter_ask_phase:
+  - text: 'Loại điện Pha đăng ký: (1 pha, 3 pha):'
+  utter_ask_file_giaydenghimuadien:
+  - text: |-
+      [Tải lên]: Giấy đề nghị mua điện
+      Vui lòng đặt tên chuẩn: giaydenghimuadien(.doc, .docx, .pdf)
+  utter_ask_file_giaytoxacnhanchuthe:
+  - text: |-
+      [Tải lên]: Giấy tờ xác nhận chủ thể
+      Vui lòng đặt tên chuẩn: giaytoxacnhanchuthe(.doc, .docx, .pdf)
+  utter_ask_file_giaytotuythan:
+  - text: |-
+      [Tải lên]: Giấy tờ tùy thân
+      Vui lòng đặt tên chuẩn: giaytotuythan(.doc, .docx, .pdf)
+  utter_ask_file_donsathachblx:
+  - text: |-
+      [Tải lên]: Giấy tờ tùy thân
+      Vui lòng đặt tên chuẩn: donsathachblx(.doc, .docx, .pdf)
+  utter_ask_file_bansaocmndhc:
+  - text: |-
+      [Tải lên]: Bản sao cmnd/cccd/hộ chiếu
+      Vui lòng đặt tên chuẩn: bansaocmndhc(.doc, .docx, .pdf)
+  utter_ask_file_giaykhamsuckhoe:
+  - text: |-
+      [Tải lên]: Giấy khám sức khỏe
+      Vui lòng đặt tên chuẩn: giaykhamsuckhoe(.doc, .docx, .pdf)                  
+actions:
+- utter_greet
+- utter_goodbye
+- utter_show_ability
+- utter_iamabot
+- utter_ask_affirm
+- utter_end
+- utter_ask_full_name
+- utter_ask_phone
+- utter_ask_cmtnd
+- utter_ask_district
+- utter_ask_sub_district
+- utter_ask_location
+- utter_ask_phase
+- utter_ask_file_giaydenghimuadien
+- utter_ask_file_giaytoxacnhanchuthe
+- utter_ask_file_giaytotuythan
+- utter_ask_file_donsathachblx
+- utter_ask_file_bansaocmndhc
+- utter_ask_file_giaykhamsuckhoe
+- action_save_form_dienlucvn_sinhhoat
+- action_save_form_gtvt_capmoibanglai
+forms:
+  form_dienlucvn_sinhhoat:
+    required_slots:
+      cmtnd:
+      - entity: cmtnd
+        type: from_entity
+      file_giaydenghimuadien:
+      - entity: file_giaydenghimuadien
+        type: from_entity
+      file_giaytotuythan:
+      - entity: file_giaytotuythan
+        type: from_entity
+      file_giaytoxacnhanchuthe:
+      - entity: file_giaytoxacnhanchuthe
+        type: from_entity
+      phone:
+      - entity: phone
+        type: from_entity
+  form_gtvt_capmoibanglai:
+    required_slots:
+      cmtnd:
+      - entity: cmtnd
+        type: from_entity
+      file_bansaocmndhc:
+      - entity: file_bansaocmndhc
+        type: from_entity
+      file_donsathachblx:
+      - entity: file_donsathachblx
+        type: from_entity
+      file_giaykhamsuckhoe:
+      - entity: file_giaykhamsuckhoe
+        type: from_entity
+      phone:
+      - entity: phone
+        type: from_entity
+e2e_actions: []

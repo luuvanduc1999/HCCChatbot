@@ -1,0 +1,49 @@
+version: "2.0"
+
+stories:
+
+- story: start dang ky cap dien sinh hoat
+  steps: 
+  - intent: dky_dienlucvn_sinhhoat
+  - action: utter_dienlucvn_sinhhoat
+  - action: utter_start
+  - action: form_dienlucvn_sinhhoat
+  - active_loop: form_dienlucvn_sinhhoat
+  - slot_was_set:
+    - requested_slot: cmtnd
+  - slot_was_set:
+    - requested_slot: phone    
+  - slot_was_set:
+    - requested_slot: file_giaydenghimuadien
+  - slot_was_set:
+    - requested_slot: file_giaytoxacnhanchuthe
+  - slot_was_set:
+    - requested_slot: file_giaytotuythan  
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_save_form_dienlucvn_sinhhoat
+  - action: utter_end
+
+- story: start dang ky cap moi blx
+  steps: 
+  - intent: dky_gtvt_capmoibanglai
+  - action: utter_gtvt_capmoibanglai
+  - action: utter_start
+  - action: form_gtvt_capmoibanglai
+  - active_loop: form_gtvt_capmoibanglai
+  - slot_was_set:
+    - requested_slot: cmtnd
+  - slot_was_set:
+    - requested_slot: phone    
+  - slot_was_set:
+    - requested_slot: file_donsathachblx
+  - slot_was_set:
+    - requested_slot: file_bansaocmndhc
+  - slot_was_set:
+    - requested_slot: file_giaykhamsuckhoe  
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_save_form_gtvt_capmoibanglai
+  - action: utter_end
