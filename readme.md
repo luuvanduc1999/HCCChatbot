@@ -1,7 +1,7 @@
 ## Install Rasa + Các module khác
 - > pip3 install -r requirements.txt
 
-# HCCChatbot
+# 1 HCCChatbot
 
 ## Train model
 - > rasa train
@@ -18,7 +18,7 @@ hoặc chỉ train nlu:
 - > rasa run actions
 - > rasa run --enable-api
 
-# DEMO UI
+# 2 DEMO UI
 **Terminal 1+2:**
 - > cd HCCChatbot
 - > rasa run --enable-api
